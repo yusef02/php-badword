@@ -3,6 +3,10 @@
 $user_string = $_GET['stringa'];
 $user_censura = $_GET['censura'];
 
+$user_string_len = strlen($user_string);
+$user_string_censurata = str_replace($user_censura,'***',$user_string);
+$user_string_censurata_len = strlen($user_string_censurata);
+
 
 
 ?>
@@ -14,7 +18,7 @@ $user_censura = $_GET['censura'];
   <title>Document</title>
 </head>
 <body>
-<p>la stringa inserita è <?= $user_string?></p>
-<p>la parola censurata è <?= $user_censura?></p>
+<p>la stringa inserita è <?= $user_string?> di lungezza pari a <?= $user_string_len?></p>
+<p>la parola censurata è <?= $user_string_censurata?> di lungezza pari a <?= $user_string_censurata_len?></p>
 </body>
 </html>
